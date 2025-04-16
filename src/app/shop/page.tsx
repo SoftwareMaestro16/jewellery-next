@@ -34,7 +34,6 @@ export default async function JewelryPage() {
 
   const shuffled = allItems.sort(() => Math.random() - 0.5);
   
-
   return (
     <div className="mt-20 sm:mt-24 flex flex-wrap items-center justify-center gap-6 px-4 sm:px-10 md:px-16 lg:px-22">
       {shuffled.map((el, index) => (
