@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 const outfit = Nunito({
   variable: "--font-geist-sans",
@@ -21,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+      <Header />
       <body
 
         className={`${outfit.variable}`}
@@ -32,6 +34,7 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/vera-logo-rounded.png" />
       </Head>
+      <Footer />
     </html>
   );
 }

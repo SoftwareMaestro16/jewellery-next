@@ -1,8 +1,85 @@
-export default function Shop() {
+'use client'
 
-    return (
-        <>
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+
+type JewelryItem = {
+  type: string;
+  name: string;
+  description: string;
+  price: string;
+  image: string;
+};
+
+export default function JewelryPage() {
+  const [items, setItems] = useState<JewelryItem[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch("https://68000237b72e9cfaf72691a3.mockapi.io/shop");
+      const json = await res.json();
+
+      const data = json[0] as Record<string, Omit<JewelryItem, 'type'>[]>;
+      
+      const allItems: JewelryItem[] = Object.entries(data).flatMap(
+        ([type, items]) =>
+          items.map((item) => ({
+            ...item,
+            type,
+          }))
+      );
+
+      const shuffled = allItems.sort(() => Math.random() - 0.5);
+      setItems(shuffled);
+    }
+
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <div className="mt-20 sm:mt-24 flex flex-wrap items-center justify-center gap-6 px-4 sm:px-10 md:px-16 lg:px-22">
+        {items.map((el, index) => (
+            <Link href={`/shop/${el.type}/${el.name
+                .toLowerCase()
+                .replace(/['"]/g, "") 
+                .replace(/\s+/g, "-")}
+            `}>
+            <div
+            key={index}
+            className="
+                w-[46%] sm:w-[280px] 
+                h-[300px] sm:h-[380px]
+                border rounded-lg 
+                shadow-md hover:shadow-xl 
+                transition-transform duration-300 transform hover:scale-[1.03] 
+                flex flex-col overflow-hidden bg-white"
+            >
+            <Image
+                src={el.image}
+                alt={el.name}
+                width={280}
+                height={180}
+                className="object-cover w-full h-[180px] sm:h-[230px]"
+            />
         
-        </>
-    )
+            <div className="flex flex-col flex-grow p-3 sm:p-4">
+                <h3 className="text-base sm:text-lg font-semibold capitalize mb-1">{el.name}</h3>
+                <p className="text-gray-600 truncate text-sm">{el.description}</p>
+
+                <div className="mt-auto pt-2">
+                <p className="text-black text-sm sm:text-base font-bold">$ {el.price}</p>
+                <p className="text-gray-500 text-xs sm:text-sm capitalize">{el.type}</p>
+                </div>
+            </div>
+            </div>
+            </Link>
+            
+        ))}
+        </div>
+    </>
+  );
 }

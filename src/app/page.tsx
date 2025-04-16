@@ -7,7 +7,6 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <Header />
       <div className="px-4 sm:px-12">
         <div className="relative w-full h-[85vh] mt-20 sm:mt-24">
           <Image
@@ -37,7 +36,6 @@ export default function Home() {
         </div>
       </div>
       <MainJewelry />
-      <Footer />
     </>
   );
 }

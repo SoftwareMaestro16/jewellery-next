@@ -6,7 +6,6 @@ export default function Contacts() {
 
     return (
         <>
-            <Header />
             <div className="w-[88%] sm:w-[74%] md:w-[73%] lg:w-[65%] mx-auto mt-22 sm:mt-27 flex flex-col justify-center">
                 <h1 className="text-xl sm:text-2xl mb-8">
                     We’re always happy to hear from you! Contact us in any convenient way — our boutique is open every day, and the VERA team will be happy to answer all your questions and help you choose the perfect piece of jewelry.
@@ -68,7 +67,6 @@ export default function Contacts() {
                     </form>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

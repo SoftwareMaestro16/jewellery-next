@@ -5,7 +5,6 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <Header />
       <div className="w-[88%] sm:w-[74%] md:w-[73%] lg:w-[65%] mx-auto mt-22 sm:mt-27 flex flex-col justify-center">
         <div className="text-left flex flex-col items-start gap-4">
           <h1 className="text-3xl sm:text-3.5xl font-extrabold">About Us</h1>
@@ -36,7 +35,6 @@ export default function About() {
           </h2>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
