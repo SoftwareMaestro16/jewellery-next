@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type JewelryItem = {
+interface JewelryItem {
   type: string;
   name: string;
   description: string;
