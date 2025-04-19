@@ -40,7 +40,7 @@ export default async function JewelryPage() {
         <Link
           key={index}
           href={`/shop/${el.type}/${toSlug(el.name)}`}
-          className="w-[46%] sm:w-[280px] h-[300px] sm:h-[380px] border rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 transform hover:scale-[1.03] flex flex-col overflow-hidden bg-white"
+          className="w-[46%] sm:w-[280px] h-[310px] sm:h-[380px] border rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 transform hover:scale-[1.03] flex flex-col overflow-hidden bg-white"
         >
           <Image
             src={el.image}
@@ -52,7 +52,7 @@ export default async function JewelryPage() {
           <div className="flex flex-col flex-grow p-3 sm:p-4">
             <h3 className="text-base sm:text-lg font-semibold capitalize mb-1">{el.name}</h3>
             <p className="text-gray-600 truncate text-sm">{el.description}</p>
-            <div className="mt-auto pt-2">
+            <div className="mt-auto">
               <p className="text-black text-sm sm:text-base font-bold">$ {el.price}</p>
               <p className="text-gray-500 text-xs sm:text-sm capitalize">{el.type}</p>
             </div>
