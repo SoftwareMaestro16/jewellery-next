@@ -15,7 +15,7 @@ function toSlug(str: string) {
 
 export default async function JewelryPage() {
   const res = await fetch("https://68000237b72e9cfaf72691a3.mockapi.io/shop", {
-    // cache: "no-cache",
+    cache: "no-store",
     next: {
         revalidate: 30
     }
