@@ -1,11 +1,11 @@
-type PageProps = {
+type ShipIdPageProps = {
     params: {
       jewelryId: string;
       shipId: string;
     };
 };
   
-export default function ShipId({ params }: PageProps) {
+export default function ShipId({ params }: ShipIdPageProps) {
     const { jewelryId, shipId } = params;
   
     return (
