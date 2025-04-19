@@ -9,9 +9,9 @@ export interface JewelryItem {
   image: string;
 };
 
-function toSlug(str: string) {
-  return str.toLowerCase().replace(/['"]/g, "").replace(/\s+/g, "-");
-}
+const toSlug = (name: string) => {
+  return name.toLowerCase().replace(/\s+/g, '-');
+};
 
 export default async function JewelryPage() {
   const res = await fetch("https://68000237b72e9cfaf72691a3.mockapi.io/shop", {
