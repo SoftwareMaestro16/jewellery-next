@@ -29,7 +29,7 @@ export function MainJewelry() {
             Earrings
           </h2>
         </Link>
-        <Link href="/shop/bracelet" className="group relative block rounded-xl overflow-hidden">
+        <Link href="/shop/bracelets" className="group relative block rounded-xl overflow-hidden">
           <Image
             src="/bracelet.jpg"
             alt="Bracelet"
@@ -41,7 +41,7 @@ export function MainJewelry() {
             Bracelet
           </h2>
         </Link>
-        <Link href="/shop/necklace" className="group relative block rounded-xl overflow-hidden">
+        <Link href="/shop/necklaces" className="group relative block rounded-xl overflow-hidden">
           <Image
             src="/necklace.jpg"
             alt="Necklace"
@@ -53,7 +53,7 @@ export function MainJewelry() {
             Necklace
           </h2>
         </Link>
-        <Link href="/shop/brooch" className="group relative block rounded-xl overflow-hidden">
+        <Link href="/shop/brooches" className="group relative block rounded-xl overflow-hidden">
           <Image
             src="/brooch.jpg"
             alt="Brooch"
