@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
 
-type JewelryIdPageProps = {
+type PageProps = {
     params: {
         jewelryId: string;
     };
 };
 
-const JewelryId: NextPage<JewelryIdPageProps> = async ({ params }) => {
+const JewelryId: NextPage<PageProps> = async ({ params }) => {
     const { jewelryId } = params;
     return (
         <>
