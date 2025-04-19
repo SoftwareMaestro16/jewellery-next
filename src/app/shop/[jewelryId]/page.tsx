@@ -1,16 +1,18 @@
+import { NextPage } from 'next';
+
 type JewelryIdPageProps = {
     params: {
-      jewelryId: string;
+        jewelryId: string;
     };
 };
 
-export default async function JewelryId({ params }: JewelryIdPageProps) {
+const JewelryId: NextPage<JewelryIdPageProps> = async ({ params }) => {
     const { jewelryId } = params;
-    // https://68000237b72e9cfaf72691a3.mockapi.io/shop
-
     return (
         <>
             <h1>Type: {jewelryId}</h1>
         </>
-    )
-}
+    );
+};
+
+export default JewelryId;
