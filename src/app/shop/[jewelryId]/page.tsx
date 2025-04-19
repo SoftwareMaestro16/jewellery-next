@@ -1,10 +1,9 @@
 import { NextPage } from 'next';
 
-type PageProps = {
-    params: {
-        jewelryId: string;
-    };
-};
+interface PageProps {
+    params: { [key: string]: string | string[] | undefined };
+    searchParams?: { [key: string]: string | string[] | undefined };
+}
 
 const JewelryId: NextPage<PageProps> = async ({ params }) => {
     const { jewelryId } = params;
