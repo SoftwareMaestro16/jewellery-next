@@ -1,15 +1,16 @@
 import { NextPage } from 'next';
 
-interface PageProps {
-    params: { [key: string]: string | string[] | undefined };
+type PageProps = {
+    params: Promise<{ jewelryId: string }>;
     searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
 const JewelryId: NextPage<PageProps> = async ({ params }) => {
-    const { jewelryId } = params;
+    const resolvedParams = await params; // Разрешаем промис
+    const { jewelryId } = resolvedParams;
     return (
         <>
-            <h1>Type: {jewelryId}</h1>
+            <h1>Тип: {jewelryId}</h1>
         </>
     );
 };
