@@ -51,7 +51,7 @@ export default async function JewelryId({ params }: PageProps) {
             <div className="flex flex-col flex-grow p-3 sm:p-4">
               <h3 className="text-base sm:text-lg font-semibold capitalize mb-1">{el.name}</h3>
               <p className="text-gray-600 truncate text-sm">{el.description}</p>
-              <div className="mt-auto pt-2">
+              <div className="mt-auto">
                 <p className="text-black text-sm sm:text-base font-bold">$ {el.price}</p>
                 <p className="text-gray-500 text-xs sm:text-sm capitalize">{el.type}</p>
               </div>
