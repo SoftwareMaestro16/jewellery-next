@@ -2,7 +2,6 @@ type JewelryIdPageProps = {
     params: {
       jewelryId: string;
     };
-    searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export default async function JewelryId({ params }: JewelryIdPageProps) {
